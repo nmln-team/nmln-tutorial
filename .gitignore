@@ -1,0 +1,30 @@
+# Paper
+paper/
+
+# Data and Results
+data/
+lightning_logs/
+results/
+new_results/
+*.mol
+*.txt
+*.ckpt
+
+# Python junk
+__pycache__/
+*.pyc
+.venv/
+../venv/
+venv/
+.idea/
+.DS_Store
+NMLN.pdf
+examples/discreteOnly/molecules/outputs/
+examples/discreteOnly/molecules/conf/
+examples/continuous/MNIST/results/results_pn_inner_pt/
+examples/continuous/MNIST/RESULTS/
+logs/
+outputs/
+examples/hybrid/QM9/data/
+results_gen/
+*.egg-info/

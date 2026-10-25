@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nmln"
+version = "0.2.0"
+description = "Neural Markov logic networks: probabilistic models of relational worlds with neural and symbolic potentials"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "pytorch-lightning",
+    "torch",
+]
+
+[project.optional-dependencies]
+# SymbolicPotential(..., backend="deeplog") compiles rules with DeepLog (Python >= 3.12), from source:
+#   git clone https://github.com/ML-KULeuven/deeplog && pip install -e deeplog
+deeplog = ["deeplog"]
+molecules = ["rdkit", "pillow"]
+tutorial = ["torchvision", "matplotlib", "jupyter", "rdkit", "pillow"]
+test = ["pytest"]
+
+[tool.setuptools.packages.find]
+include = ["nmln*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = [
+    "ignore::UserWarning:torch.*",
+    "ignore::DeprecationWarning:torch.*",
+    "ignore:.*self.log.*:UserWarning",
+]
