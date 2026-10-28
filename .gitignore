@@ -28,3 +28,4 @@ outputs/
 examples/hybrid/QM9/data/
 results_gen/
 *.egg-info/
+.ipynb_checkpoints/
